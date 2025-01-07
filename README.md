@@ -3,7 +3,9 @@
  1. Configuração do Canvas e Contexto
 Javascript-escritor
 
-Copiar código
+
+
+
 var canvas = document.getElementById("gameCanvas");
 var ctx = canvas.getContext("2d");
 if (!ctx) {
@@ -14,7 +16,8 @@ ctx : O contexto 2D do canvas é usado para desenhar no jogo. Se o contexto não
 2. Configuração do Labirinto
 Javascript-escritor
 
-Copiar código
+
+
 var tileSize = 40; // Tamanho de cada célula do labirinto
 var rows = 10;
 var cols = 10;
@@ -33,7 +36,8 @@ exitX e exitY : A posição da saída (célula (8,8)).
 4. Controle de Tempo
 Javascript-escritor
 
-Copiar código
+
+
 var initialTimeLimit = 60;
 var timeLimit = initialTimeLimit;
 var timeLeft = timeLimit;
@@ -44,7 +48,8 @@ timerInterval : Armazena o intervalo do temporizador que será usado para atuali
 5. Carregamento de Imagens
 Javascript-escritor
 
-Copiar código
+
+
 var wallImage = new Image();
 var pathImage = new Image();
 var exitImage = new Image();
@@ -55,7 +60,8 @@ São imagens criadas para representar as paredes, os caminhos e a saída do labi
 6. Função generateMazepara Gerar o Labirinto
 Javascript-escritor
 
-Copiar código
+
+
 function generateMaze() {
     var newMaze = [];
     // Gerar um labirinto básico com paredes e caminhos
@@ -85,7 +91,8 @@ isExitAccessible verifica se a saída pode ser obtida a partir do início utiliz
 7. FunçãoisExitAccessible
 Javascript-escritor
 
-Copiar código
+
+
 function isExitAccessible(maze) {
     var visited = Array.from({ length: rows }, function () { return Array(cols).fill(false); });
     var stack = [{ x: 0, y: 1 }];
@@ -116,7 +123,8 @@ isExitAccessible verifica, utilizando uma busca em profundidade (DFS), se a saí
 8. Funções de Desenho
 Javascript-escritor
 
-Copiar código
+
+
 function drawMaze(maze) {
     for (var row = 0; row < rows; row++) {
         for (var col = 0; col < cols; col++) {
@@ -133,7 +141,8 @@ drawMaze desenha o labirinto no canvas, usando como imagens de paredes e caminho
 9. Função de Movimento do Jogador
 Javascript-escritor
 
-Copiar código
+
+
 function movePlayer(dx, dy) {
     var newX = playerX + dx;
     var newY = playerY + dy;
@@ -154,7 +163,8 @@ Também verifica se o jogador chegou à saída, o que atualiza a pontuação, di
 10. Função de Temporizador
 Javascript-escritor
 
-Copiar código
+
+
 function updateTimer() {
     var timerElement = document.getElementById("timer");
     if (timerElement) {
@@ -170,7 +180,8 @@ updateTimer atualiza o tempo restante na tela a cada segundo. Se o tempo acabar,
 11. Interação com o Usuário
 Javascript-escritor
 
-Copiar código
+
+
 window.addEventListener("keydown", function (event) {
     switch (event.key) {
         case "ArrowUp":
@@ -192,7 +203,8 @@ keydown detecta quando uma tecla de direção é pressionada e chama a função 
 12. Funções de Inicialização e Reinício
 Javascript-escritor
 
-Copiar código
+
+
 function resetGame() {
     maze = generateMaze();
     playerX = 1;
@@ -205,7 +217,8 @@ function resetGame() {
 resetGame reinicia o jogo, gerando um novo labirinto, reposicionando o jogador e reiniciando o cronômetro.
 Javascript-escritor
 
-Copiar código
+
+
 function startTimer() {
     clearInterval(timerInterval);
     var timerElement = document.getElementById("timer");
@@ -221,14 +234,16 @@ startTimer inicia o temporizador, diminuindo o tempo restante a cada segundo.
 13. Exibição do Tempo e Pontuação
 Javascript-escritor
 
-Copiar código
+
+
 document.body.insertAdjacentHTML("beforeend", '<div id="timer" style="font-size: 20px; margin-top: 10px; display: none;">Tempo restante: 30s</div>');
 document.body.insertAdjacentHTML("beforeend", '<div id="score" style="font-size: 20px; margin-top: 10px;">Pontuação: 0</div>');
 Exibe o tempo restante e a pontuação na página, logo abaixo do canvas.
 14. Inicialização do Jogo
 Javascript-escritor
 
-Copiar código
+
+
 var maze = generateMaze();
 update();
 labirinto é gerado e o jogo é iniciado acionando a função updatepara desenhar o labirinto e o jogador.
