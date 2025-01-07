@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labirinto em TypeScript</title>
+
+  <!-- Link para o arquivo de estilo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Maze Runner</h1>
+
+  <!-- Botão Jogar com imagem -->
+  <button id="startButton">
+    <img src="icon.jpeg" alt="JOGAR" id="playImage"> JOGAR
+  </button>
+  
+  <!-- Canvas do jogo (inicialmente oculto) -->
+  <div id="gameContainer" style="display: none;">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </div>
+  
+  <!-- Link para o arquivo JavaScript compilado -->
+  <script src="game.js" defer></script>
+  <script src="app.js" defer></script> <!-- Novo script para controlar o botão -->
+</body>
+</html>

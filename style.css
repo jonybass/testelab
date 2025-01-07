@@ -1,0 +1,48 @@
+/* Estilo para o botão com imagem */
+#startButton {
+  padding: 30px 90px;
+  font-size: 45px;
+  background-color: rgb(15, 19, 15);
+  color: rgb(225, 232, 233);
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  margin-bottom: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; /* Ajuste conforme necessário */
+  height: 35px; /* Ajuste conforme necessário */
+  font-family: Andale mono, monospace;
+}
+
+/* Estilo para a imagem do botão */
+#playImage {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  object-fit: contain; /* Mantém a proporção original da imagem */
+}
+
+/* Corpo da página com imagem de fundo */
+body {
+  background-image: url('logo.jpeg'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+h1{
+color: rgb(108, 240, 159);
+background-color: transparent;
+border: none;
+border-radius: 5px;
+font-family: andale mono, monospace;
+font-size: 80px;
+}
